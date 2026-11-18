@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | Inventario</title>
+  <link rel="icon" href="img/logo.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== MENÚ HORIZONTAL FIJO ===== -->
+  <header class="navbar">
+    <div class="nav-contenedor">
+      <a href="index.html" class="marca">
+        <img src="img/logo.svg" alt="">
+        <div><strong >CAMARA DEPARTAMENTAL DEL LIBRO DE LA PAZ</strong><small>Sistema de inventario</small></div>
+      </a>
+      <button class="btn-menu" id="btnMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="menu" id="menu">
+        <a href="index.html"       class="menu-link activo" aria-current="page">Inicio</a>
+        <a href="activos.html"     class="menu-link">Activos fijos</a>
+        <a href="materiales.html"  class="menu-link">Materiales de trabajo</a>
+        <a href="consumibles.html" class="menu-link">Suministros de oficina</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== INICIO ===== -->
+  <main class="contenido">
+    <section class="bienvenida">
+      <span class="etiqueta">Inventario gestión <span data-gestion></span></span>
+      <h1>Bienes de la asociación</h1>
+      <p>Resumen de la cantidad de ítems registrados en cada categoría. Haga clic en una tarjeta para ver el listado.</p>
+    </section>
+
+    <section class="tarjetas-conteo">
+      <a href="activos.html" class="conteo" style="--i:0">
+        <span class="conteo-num" id="totalActivos">0</span>
+        <span class="conteo-txt">Activos fijos</span>
+        <span class="conteo-ir">Ver listado →</span>
+      </a>
+      <a href="materiales.html" class="conteo" style="--i:1">
+        <span class="conteo-num" id="totalMateriales">0</span>
+        <span class="conteo-txt">Materiales de trabajo</span>
+        <span class="conteo-ir">Ver listado →</span>
+      </a>
+      <a href="consumibles.html" class="conteo" style="--i:2">
+        <span class="conteo-num" id="totalConsumibles">0</span>
+        <span class="conteo-txt">Suministros de Oficina</span>
+        <span class="conteo-ir">Ver listado →</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="pie">  Inventario gestión - Derechos Reservados <span data-gestion></span></footer>
+
+  <script src="js/datos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/inicio.js"></script>
+</body>
+</html>

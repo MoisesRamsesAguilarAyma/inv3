@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suministros de oficina | Inventario</title>
+  <link rel="icon" href="img/logo.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== MENÚ HORIZONTAL FIJO ===== -->
+  <header class="navbar">
+    <div class="nav-contenedor">
+      <a href="index.html" class="marca">
+        <img src="img/logo.svg" alt="">
+        <div><strong >CAMARA DEPARTAMENTAL DEL LIBRO - LA PAZ</strong><small>Sistema de inventario</small></div>
+      </a>
+      <button class="btn-menu" id="btnMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="menu" id="menu">
+        <a href="index.html"       class="menu-link">Inicio</a>
+        <a href="activos.html"     class="menu-link">Activos fijos</a>
+        <a href="materiales.html"  class="menu-link">Materiales de trabajo</a>
+        <a href="consumibles.html" class="menu-link activo" aria-current="page">Suministros de oficina</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== CONSUMIBLES ===== -->
+  <main class="contenido">
+    <div class="encabezado-seccion">
+      <div>
+        <span class="etiqueta">Suministros Perecederos</span>
+        <h1>Suministros de oficina</h1>
+      </div>
+      <input type="search" class="buscador" id="buscador" placeholder="Buscar…" aria-label="Buscar consumible">
+    </div>
+
+    <div class="tabla-dos">
+      <div class="fila cabecera"><span>Suministros de oficina</span><span>Detalle</span></div>
+      <div id="lista"></div>
+    </div>
+  </main>
+
+  <footer class="pie"> Inventario gestión <span data-gestion></span></footer>
+
+  <!-- ===== TARJETA DE DETALLE ===== -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="tarjetaNombre" hidden>
+    <article class="tarjeta">
+      <button class="tarjeta-cerrar" id="tarjetaCerrar" aria-label="Cerrar">&times;</button>
+      <div class="tarjeta-foto"><img id="tarjetaFoto" src="img/sin-foto.svg" alt=""></div>
+      <div class="tarjeta-cuerpo">
+        <h2 id="tarjetaNombre"></h2>
+        <dl class="ficha" id="tarjetaFicha"></dl>
+      </div>
+    </article>
+  </div>
+
+  <script src="js/datos.js"></script>
+  <script src="js/comun.js"></script>
+  <script>iniciarLista(consumibles, camposSuministros);</script>
+</body>
+</html>
